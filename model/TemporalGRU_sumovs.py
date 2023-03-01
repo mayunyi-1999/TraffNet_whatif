@@ -56,7 +56,7 @@ class TemperalGRU_sumovs(nn.Module):
                                       bias=False).to(torch.device('cuda:0'))
 
     def forward(self, seq):
-        # whatif single-pred
+        # what-if single-pred
         seq = seq.reshape(-1, self.window_width, self.in_size * self.edge_num)
         pad = torch.zeros(seq.shape[0], self.horizon - 1, seq.shape[-1]).to(torch.device('cuda:1'))
         pad_seq = torch.hstack((seq, pad))
