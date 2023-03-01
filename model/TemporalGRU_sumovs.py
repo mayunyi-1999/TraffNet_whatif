@@ -49,7 +49,6 @@ class TemperalGRU_sumovs(nn.Module):
             nn.Linear(900, 600),
             nn.ReLU(),
             nn.Linear(600, self.edge_num),
-            nn.ReLU(),
         ).to(torch.device('cuda:0'))
 
         self.linear_trans = nn.Linear(in_features=self.hidden_size,
